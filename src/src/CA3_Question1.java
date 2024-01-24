@@ -15,7 +15,11 @@ street();
     }
 public void driveway()
 {
-    Deque<String> myStack = new ArrayDeque<>();
+    Scanner kbrd = new Scanner(System.in);
+    Stack<Integer> dw = new Stack<Integer>();
+    dw.push(kbrd.nextInt());
+    dw.push(kbrd.nextInt());
+    System.out.println("Current Stack is "+ dw);
 }
 public void street()
 {
