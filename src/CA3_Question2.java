@@ -40,8 +40,16 @@ public class CA3_Question2
     }
     private static void fill(int r, int c, int[][] arr)
     {
+        Scanner kb = new Scanner(System.in);
         Stack<Pair> stack = new Stack<>();
         stack.push(new Pair(r,c));
+        System.out.println("Please enter starting position");
+        int startRow = kb.nextInt();
+        int startColumn = kb.nextInt();
+        while(!stack.isEmpty())
+        {
+            Pair currentPair = stack.pop();
+        }
 
     }
 
