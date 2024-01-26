@@ -40,6 +40,8 @@ public class CA3_Question2
     }
     private static void fill(int r, int c, int[][] arr)
     {
+        Stack<Pair> stack = new Stack<>();
+        stack.push(new Pair(r,c));
 
     }
 
