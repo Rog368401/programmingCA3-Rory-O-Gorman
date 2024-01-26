@@ -59,12 +59,7 @@ public class CA3_Question1
             }
         } while (choice > 0);
 
-//        dw.push(kbrd.nextInt());
-//        System.out.println("cars in driveway "+ dw);
-//        dw.push(kbrd.nextInt());
-//        System.out.println("cars in driveway "+ dw);
-//
-//        System.out.println("cars moved to street "+ st);
+
 
     }
 
