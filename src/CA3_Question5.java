@@ -49,7 +49,7 @@ public class CA3_Question5
                     if (land.isEmpty() && takeOff.isEmpty()) {
 
                         System.out.println("No flights left to land or takeOff");
-
+                        choice=0;
                     } else if (!land.isEmpty()) {
                         land.remove();
                         System.out.println("Flights left to land " + land);
