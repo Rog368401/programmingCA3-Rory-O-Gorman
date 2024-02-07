@@ -22,14 +22,14 @@ public class CA3_Question5
             System.out.println("What would you like to do?");
             System.out.println(" 1- Enter flight for takeOff");
             System.out.println(" 2- Enter flight for landing");
+            System.out.println(" 3- Next");
             System.out.println("0- Quit");
 
             choice = kbrd.nextInt();
 
             switch (choice) {
-                case 0:{
-                    System.out.println("Take off queue = " +
-                            takeOff );
+                case 0: {
+                    System.out.println("Take off queue = " + takeOff);
                     System.out.println("Landing queue = " + land);
                 }
                 break;
@@ -44,8 +44,24 @@ public class CA3_Question5
                     land.add(kbrd.next());
                     System.out.println("flights to land " + land);
                 }
+                break;
+                case 3: {
+                    if (land.isEmpty() && takeOff.isEmpty()) {
+
+                        System.out.println("No flights left to land or takeOff");
+
+                    } else if (!land.isEmpty()) {
+                        land.remove();
+                        System.out.println("Flights left to land " + land);
+                    } else if (land.isEmpty()) {
+                        takeOff.remove();
+                        System.out.println("Flights left to takeOff " + takeOff);
+
+                    }
+                }
+                }
             }
-        } while (choice > 0);
+         while (choice > 0);
     }
 
 
