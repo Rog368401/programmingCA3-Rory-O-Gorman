@@ -33,17 +33,28 @@ public class CA3_Question6
                 int qty = in.nextInt();
                 System.out.println("How much do they cost per share");
                 double price = in.nextDouble();
-                total = total+(price * qty);
+                total += (price * qty);
                 shares.add(qty);
 
                 System.out.println( "current shares " + shares + "Total spent " + total);
             }
             else if(command.equals("sell"))
-            {
+            {System.out.println("How many shares would you like to sell");
                 int qty = in.nextInt();
+                System.out.println("How much do they sell for per share");
                 double price = in.nextDouble();
 
+                int remainingQty = qty;
+                double profit = 0;
 
+                while (remainingQty > 0 && !shares.isEmpty()) {
+                    int sharesToSell = Math.min(remainingQty, shares.peek());
+                    double revenue = sharesToSell * price;
+                    profit += revenue - sharesToSell * (total / shares.size());
+                    remainingQty -= sharesToSell;
+                    shares.remove();
+                }
+                System.out.println("Total gain from this sale: " + profit);
             }
         }while(!command.equalsIgnoreCase("quit"));
         System.out.println(shares);
