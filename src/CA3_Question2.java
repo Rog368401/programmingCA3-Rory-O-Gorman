@@ -52,12 +52,12 @@ public class CA3_Question2
 
             if (arr[row][col] == 0) {
                 arr[row][col] = count++;
-                pushUnfilledNeighbors(stack, row, col, arr);
+                fillNeighbors(stack, row, col, arr);
             }
         }
     }
 
-    private static void pushUnfilledNeighbors(Stack<Pair> stack, int row, int col, int[][] arr) {
+    private static void fillNeighbors(Stack<Pair> stack, int row, int col, int[][] arr) {
         int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
         for (int[] direction : directions) {
