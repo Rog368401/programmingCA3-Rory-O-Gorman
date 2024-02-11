@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Stack;
+
 /**
  *  Name:
  *  Class Group:
@@ -12,9 +13,29 @@ public class CA3_Question4 {
     /*
         filename: name of the file to test.
      */
-    public static boolean validate(String filename) throws FileNotFoundException
-    {
-        return false;
+    public static boolean validate(String filename) throws FileNotFoundException {
+        File file = new File(filename);
+        Scanner txt = new Scanner(file);
+        Stack<String> stack = new Stack<>();
+
+        while (txt.hasNext()) {
+            String word = txt.next();
+            if (word.startsWith("<")) {
+                if (word.startsWith("</")) {
+                    if (stack.isEmpty()) {
+                        return false;
+                    }
+                    String openingTag = stack.pop();
+                    if (!openingTag.equals(word.substring(2, word.length() - 1))) {
+                        return false; 
+                    }
+                } else {
+                    stack.push(word.substring(1, word.length() - 1)); 
+                }
+            }
+        }
+
+        return stack.isEmpty(); 
     }
 
     /*

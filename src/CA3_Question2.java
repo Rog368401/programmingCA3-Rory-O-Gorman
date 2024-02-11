@@ -58,7 +58,7 @@ public class CA3_Question2
     }
 
     private static void pushUnfilledNeighbors(Stack<Pair> stack, int row, int col, int[][] arr) {
-        int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // North, South, West, East
+        int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
         for (int[] direction : directions) {
             int newRow = row + direction[0];
