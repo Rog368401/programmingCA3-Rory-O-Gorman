@@ -18,7 +18,6 @@ public class CA3_Question1
         Scanner kbrd = new Scanner(System.in);
         Stack<Integer> dw = new Stack<Integer>();
         Stack<Integer> st = new Stack<Integer>();
-        int car = 0;
         System.out.println(dw);
         int choice;
         do {
